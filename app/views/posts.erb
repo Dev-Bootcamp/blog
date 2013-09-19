@@ -1,0 +1,11 @@
+<div class="container">
+
+  <h1>List of Blog Posts</h1>
+  <ul>
+    <% @posts.each do |post| %>
+      <li><a href="/posts/<%= post.id %>_<%= post.title %>">Post <%= post.id %>: <%= post.title %></a></li>
+    <% end %>
+  </ul>
+</div>
+
+<a href="/">Return Home</a>
