@@ -15,3 +15,12 @@ end
 get '/create_post' do
   erb :create_post
 end
+
+# ==============================
+
+post '/create_post' do
+  puts params
+  @post = Post.new(params[:post])
+  @post.save
+  redirect to ("/posts/#{@post.id}")
+end
