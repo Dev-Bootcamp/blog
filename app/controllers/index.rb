@@ -13,5 +13,5 @@ get '/posts/:id' do
 end
 
 get '/create_post' do
-  erb :construction
+  erb :create_post
 end
