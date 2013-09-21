@@ -21,8 +21,6 @@ get '/edit/:id' do
   tags = []
   @post.tags.each { |tag| tags << tag.name }
   @tags = tags.join(', ')
-  p @tags
-  p @tags.class
   erb :edit
 end
 

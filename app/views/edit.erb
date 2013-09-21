@@ -2,11 +2,11 @@
   <h1>Edit Your Blog Post</h1><br>
   <form id="edit_post" action="/edit_post/<%= @post.id %>" method="POST">
     <label for="title">Post Title:</label>
-    <input id="title" type="text" name="post[title]" value=<%= @post.title %>><br>
+    <input id="title" type="text" name="post[title]" value="<%= @post.title %>"><br>
     <label for="body">Post Body:</label>
     <textarea id="body" name="post[body]"><%= @post.body %></textarea><br>
     <label for="tags">Tags:</label>
-    <input id="tags" type="text" name="tag[names]" value=<%= @tags %>><br>
+    <input id="tags" type="text" name="tag[names]" value="<%= @tags %>"><br>
     <input type="submit" value="Update!"><br>
   </form>
   <a href="/"><input type="button" value="Cancel"></a>
