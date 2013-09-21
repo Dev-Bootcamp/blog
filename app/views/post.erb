@@ -1,11 +1,16 @@
 <div class="container">
   <h1><%= @post.title %></h1><br>
   <p><%= @post.body %></p><br>
-  <p>Tags: <% @post.tags.each do |tag| %>
-    <%= tag.name %>
+  <% tags = [] %>
+  <p>
+    <% @post.tags.each do |tag| %>
+      <% tags << tag.name %>
     <% end %>
+    Tags: <%= tags.join(', ') %><br>
+    <a href="/edit/<%= @post.id %>">Edit this post</a>
+  </p>
+  <p>
+    <a href="/posts">Return to Posts</a><br>
+    <a href="/">Return Home</a><br>
   </p>
 </div>
-
-<a href="/posts">Return to Posts</a><br>
-<a href="/">Return Home</a>

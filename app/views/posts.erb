@@ -1,11 +1,12 @@
 <div class="container">
-
   <h1>List of Blog Posts</h1>
   <ul>
     <% @posts.each do |post| %>
-      <li><a href="/posts/<%= post.id %>_<%= post.title %>">Post <%= post.id %>: <%= post.title %></a></li>
+      <li><a href="/posts/<%= post.id %>_<%= post.title %>">Post <%= post.id %>: <%= post.title %></a><a id="edit" href="/edit/<%= post.id %>">(edit)</a></li>
     <% end %>
   </ul>
+  <p>
+    <a href="/create_post"> Create a new blog post</a><br>
+    <a href="/">Return Home</a>
+  </p>
 </div>
-
-<a href="/">Return Home</a>
