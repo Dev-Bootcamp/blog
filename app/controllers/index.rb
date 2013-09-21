@@ -35,7 +35,7 @@ get '/delete_post/:id' do
 end
 
 get '/tags' do
-  @tags = Tag.all
+  @tags = Tag.includes(:posts).where("posts.id" => true)
   @tags.sort_by! { |tag| tag.name.downcase }
   erb :tags
 end
