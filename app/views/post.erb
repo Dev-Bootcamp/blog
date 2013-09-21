@@ -3,7 +3,7 @@
   <p><%= @post.body %></p><br>
   <p>Tags: 
     <% @post.tags.each do |tag| %>
-      <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
+      <a href="/tags/<%= tag.name %>"><%= tag.name %></a>
     <% end %><br>
   </p>
   <p>

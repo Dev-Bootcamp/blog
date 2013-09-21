@@ -2,10 +2,10 @@
 <h1>List of all Tags</h1>
 <ul>
   <% @tags.each do |tag| %>
-      <li>
-        <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
-      </li>
-    <% end %>
+    <li>
+      <a href="/tags/<%= tag.name %>"><%= tag.name %></a>
+    </li>
+  <% end %>
 </ul>
 <p>
   <a href="/posts">Return to Posts</a><br>

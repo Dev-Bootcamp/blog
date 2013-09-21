@@ -30,23 +30,27 @@ get '/delete/:id' do
 end
 
 get '/delete_post/:id' do
-  Post.delete(params[:id])
+  Post.destroy(params[:id])
   redirect to ('/posts')
 end
 
 get '/tags' do
-  @tags = Tag.includes(:posts).where("posts.id" => true)
-  @tags.sort_by! { |tag| tag.name.downcase }
+  tags = Tag.all
+  tags.sort_by! { |tag| tag.name.downcase }
+  @tags = tags.reject { |tag| tag.posts == [] }
   erb :tags
 end
 
-get '/tags/:id' do
-  @tag = Tag.find(params[:id])
+get '/tags/:name' do
+  @tag = Tag.where(name: params[:name])[0]
+  p @tag
+  p @tag.name
   @posts = Post.includes(:tags).where("tags.name" => @tag.name)
+  p @posts
   erb :tag
 end
 
-# ==================================
+# =================================================================
 
 post '/create_post' do
   puts params
