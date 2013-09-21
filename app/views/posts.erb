@@ -2,7 +2,11 @@
   <h1>List of Blog Posts</h1>
   <ul>
     <% @posts.each do |post| %>
-      <li><a href="/posts/<%= post.id %>_<%= post.title %>">Post <%= post.id %>: <%= post.title %></a><a id="edit" href="/edit/<%= post.id %>">(edit)</a></li>
+      <li>
+        <a href="/posts/<%= post.id %>_<%= post.title %>">Post <%= post.id %>: <%= post.title %></a> 
+        <span id="edit"><a id="edit" href="/edit/<%= post.id %>">(edit)</a></span> 
+        <span id="delete"><a href="/delete/<%= post.id %>">(delete)</a></span>
+      </li>
     <% end %>
   </ul>
   <p>

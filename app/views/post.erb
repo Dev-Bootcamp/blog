@@ -7,7 +7,8 @@
       <% tags << tag.name %>
     <% end %>
     Tags: <%= tags.join(', ') %><br>
-    <a href="/edit/<%= @post.id %>">Edit this post</a>
+    <a href="/edit/<%= @post.id %>">Edit this post</a><br>
+    <a href="/delete/<%= @post.id %>">Delete this post</a><br>
   </p>
   <p>
     <a href="/posts">Return to Posts</a><br>

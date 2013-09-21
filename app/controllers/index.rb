@@ -24,6 +24,16 @@ get '/edit/:id' do
   erb :edit
 end
 
+get '/delete/:id' do
+  @post = Post.find(params[:id])
+  erb :delete
+end
+
+get '/delete_post/:id' do
+  Post.delete(params[:id])
+  redirect to ('/posts')
+end
+
 # ==================================
 
 post '/create_post' do
