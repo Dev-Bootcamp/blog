@@ -1,9 +1,10 @@
 <div class="container">
-  <h1><%= @post.title %></h1>
-  <br>
-  <p><%= @post.body %></p>
-  <br>
-  <p>Tags: <%= @post.tags %></p>
+  <h1><%= @post.title %></h1><br>
+  <p><%= @post.body %></p><br>
+  <p>Tags: <% @post.tags.each do |tag| %>
+    <%= tag.name %>
+    <% end %>
+  </p>
 </div>
 
 <a href="/posts">Return to Posts</a><br>

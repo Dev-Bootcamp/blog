@@ -22,6 +22,7 @@ post '/create_post' do
   puts params
   @post = Post.new(params[:post])
   @post.save
-  Tag.new(params[:tag][:names])
+  @tags = (params[:tag][:names].split(',')).collect { |tag| tag.strip }
+  @tags.each { |tag| @post.tags << Tag.find_or_create_by_name(tag) }
   redirect to ("/posts/#{@post.id}")
 end
