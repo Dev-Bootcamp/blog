@@ -34,6 +34,18 @@ get '/delete_post/:id' do
   redirect to ('/posts')
 end
 
+get '/tags' do
+  @tags = Tag.all
+  @tags.sort_by! { |tag| tag.name.downcase }
+  erb :tags
+end
+
+get '/tags/:id' do
+  @tag = Tag.find(params[:id])
+  @posts = Post.includes(:tags).where("tags.name" => @tag.name)
+  erb :tag
+end
+
 # ==================================
 
 post '/create_post' do

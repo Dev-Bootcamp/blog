@@ -1,0 +1,13 @@
+<div class="container">
+  <h1><%= @tag.name %></h1><br>
+  <p>Posts:</p>
+  <p>
+    <% @posts.each do |post| %>
+      <a href="/posts/<%= post.id %>">Post <%= post.id %>: <%= post.title %></a>
+    <% end %><br>
+  </p>
+  <p>
+    <a href="/tags">Return to Tags</a><br>
+    <a href="/">Return Home</a><br>
+  </p>
+</div>

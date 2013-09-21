@@ -1,0 +1,14 @@
+<div class="container">
+<h1>List of all Tags</h1>
+<ul>
+  <% @tags.each do |tag| %>
+      <li>
+        <a href="/tags/<%= tag.id %>"><%= tag.name %></a>
+      </li>
+    <% end %>
+</ul>
+<p>
+  <a href="/posts">Return to Posts</a><br>
+  <a href="/">Return Home</a><br>
+</p>
+</div>
